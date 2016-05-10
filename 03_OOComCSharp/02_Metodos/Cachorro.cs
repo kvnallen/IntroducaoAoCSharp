@@ -4,7 +4,6 @@ namespace _03_OOComCSharp._02_Metodos
 {
     public class Cachorro
     {
-
         public Cachorro()
         {
             EhLegal = true;
@@ -12,9 +11,6 @@ namespace _03_OOComCSharp._02_Metodos
 
         public bool EhLegal { get; private set; }
 
-        public void Latir()
-        {
-            Console.WriteLine("Woof!");
-        }
+        public void Latir() => Console.WriteLine("Woof!");
     }
 }

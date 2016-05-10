@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="01_ClassesAtributos\Cachorro.cs" />
+    <Compile Include="01_ClassesAtributos\Deus.cs" />
     <Compile Include="01_ClassesAtributos\Gato.cs" />
     <Compile Include="02_Metodos\Cachorro.cs" />
     <Compile Include="02_Metodos\Gato.cs" />
@@ -51,13 +52,18 @@
     <Compile Include="03_Heranca\Cachorro.cs" />
     <Compile Include="03_Heranca\Gato.cs" />
     <Compile Include="03_Heranca\Peixe.cs" />
-    <Compile Include="04_Interfaces\Gato.cs" />
-    <Compile Include="04_Interfaces\IAnimal.cs" />
+    <Compile Include="04_Interfaces e  Classe Abstrata\ClasseAbstrata.cs" />
+    <Compile Include="04_Interfaces e  Classe Abstrata\Gato.cs" />
+    <Compile Include="04_Interfaces e  Classe Abstrata\IAnimal.cs" />
+    <Compile Include="Deus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClassesTeste\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

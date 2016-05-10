@@ -1,4 +1,6 @@
-﻿namespace _03_OOComCSharp._01_ClassesAtributos
+﻿using Vida.Marvel.Entidades;
+
+namespace ProjetoTeste.Entidades
 {
     public class Cachorro
     {

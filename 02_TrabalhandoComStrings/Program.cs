@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text;
 
 namespace _02_TrabalhandoComStrings
 {
@@ -11,89 +12,92 @@ namespace _02_TrabalhandoComStrings
 
             //1 - Interpolação
 
-            string nome = $"Kevin";
-            string sobrenome = "Allen";
 
-            //Exemplo com interpolação
-            string resultado = $"Seu nome completo é : {nome} {sobrenome}";
+            //var nome = "Kevin";
+            //var sobrenome = "Allen";
 
-            Console.WriteLine(resultado);
+            ////Com interpolação
+            //var var1 = $"Nome Completo {nome} e {sobrenome}";
+
+            ////Sem interpolação
+            //var var2 = "Nome Completo " + nome + " e " + sobrenome;
+
+
+            ////Exemplo com interpolação
+            //string resultado = $"Seu nome completo é : {nome} {sobrenome}";
+
+            //Console.WriteLine(resultado);
 
             #endregion
 
             #region 2 - Strings Literais
 
-            string texto =
-                "Mussum Ipsum, cacilds vidis litro abertis. " +
-                "Ta deprimidis, eu conheço uma cachacis que pode " +
-                "alegrar sua vidis.” Si num tem leite então bota " +
-                "uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir" +
-                ", sentado sem cochilar e fazendo pose. " +
-                "Leite de capivaris, leite de mula manquis.";
+            //string texto =
+            //    "Mussum Ipsum, cacilds vidis litro abertis. " +
+            //    "Ta deprimidis, eu conheço uma cachacis que pode " +
+            //    "alegrar sua vidis.” Si num tem leite então bota " +
+            //    "uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir" +
+            //    ", sentado sem cochilar e fazendo pose. " +
+            //    "Leite de capivaris, leite de mula manquis.";
 
-            //Não precisa concatenar
-            // Evita concatenação (chato)
-            // Evita criação de novos objetos
+            ////Não precisa concatenar
+            //// Evita concatenação (chato)
+            //// Evita criação de novos objetos
 
-            string textoLiteral =
-                @"Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. 
-                  Vivamus sit amet nibh non tellus tristique interdum. 
-                  Quem num gosta di mé, boa gente num é. in elementis mé pra quem é amistosis quis leo. 
-                  Sapien in monti palavris qui num significa nadis i pareci latim.
+            //string textoLiteral =
+            //    @"Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. 
+            //      Vivamus sit amet nibh non tellus tristique interdum. 
+            //      Quem num gosta di mé, boa gente num é. in elementis mé pra quem é amistosis quis leo. 
+            //      Sapien in monti palavris qui num significa nadis i pareci latim.
 
-                  Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! 
-                  Si num tem leite então bota uma pinga aí cumpadi! 
-                  Leite de capivaris, leite de mula manquis. 
-                  Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.";
+            //      Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! 
+            //      Si num tem leite então bota uma pinga aí cumpadi! 
+            //      Leite de capivaris, leite de mula manquis. 
+            //      Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus.";
+
+            //#region Teste de desempenho
+
+            //var watch = Stopwatch.StartNew();
+
+            //for (int i = 0; i < 1000000000; i++)
+            //{
+            //    var desempenho = "Mussum Ipsum, cacilds vidis litro abertis. " +
+            //                     "Ta deprimidis, eu conheço uma cachacis que pode " +
+            //                     "alegrar sua vidis.” Si num tem leite então bota " +
+            //                     "uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir" +
+            //                     ", sentado sem cochilar e fazendo pose. " +
+            //                     "Leite de capivaris, leite de mula manquis.";
+            //}
+
+            //watch.Stop();
 
 
-            #region Teste de desempenho
+            //var watchLiteral = Stopwatch.StartNew();
 
-            var watch = Stopwatch.StartNew();
+            //for (int i = 0; i < 1000000000; i++)
+            //{
+            //    var desempenho = @"Mussum Ipsum, cacilds vidis litro abertis.
+            //    Ta deprimidis, eu conheço uma cachacis que pode 
+            //    alegrar sua vidis.” Si num tem leite então bota 
+            //    uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir
+            //    , sentado sem cochilar e fazendo pose.
+            //    Leite de capivaris, leite de mula manquis.";
+            //}
 
-            for (int i = 0; i < 1000000000; i++)
-            {
-                var desempenho = "Mussum Ipsum, cacilds vidis litro abertis. " +
-                                 "Ta deprimidis, eu conheço uma cachacis que pode " +
-                                 "alegrar sua vidis.” Si num tem leite então bota " +
-                                 "uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir" +
-                                 ", sentado sem cochilar e fazendo pose. " +
-                                 "Leite de capivaris, leite de mula manquis.";
-            }
+            //watchLiteral.Stop();
 
-            watch.Stop();
+            //Console.WriteLine($"Tempo concatenando: {watch.Elapsed}");
+            //Console.WriteLine($"Tempo com literal: {watchLiteral.Elapsed}");
 
-
-            var watchLiteral = Stopwatch.StartNew();
-
-            for (int i = 0; i < 1000000000; i++)
-            {
-                var desempenho = @"Mussum Ipsum, cacilds vidis litro abertis.
-                Ta deprimidis, eu conheço uma cachacis que pode 
-                alegrar sua vidis.” Si num tem leite então bota 
-                uma pinga aí cumpadi! Em pé sem cair, deitado sem dormir
-                , sentado sem cochilar e fazendo pose.
-                Leite de capivaris, leite de mula manquis.";
-            }
-
-            watchLiteral.Stop();
-
-            Console.WriteLine($"Tempo concatenando: {watch.Elapsed}");
-            Console.WriteLine($"Tempo com literal: {watchLiteral.Elapsed}");
-
-            #endregion
+            //#endregion
 
             #endregion
 
             #region 3 - Conversões
 
-
-
-
-
             #region Números
 
-            const string numeroEmString = "123456";
+            string numeroEmString = "123456";
 
             int meuInteiro;
 
@@ -108,6 +112,10 @@ namespace _02_TrabalhandoComStrings
                 Console.WriteLine("Número convertido com sucesso!");
             else
                 Console.WriteLine("Ops! Esta string não é um inteiro em...");
+
+            //Verifica se o valor é nulo
+            //Nas outras não verifica
+            Convert.ToInt32(null);
 
             #endregion
 
@@ -135,6 +143,7 @@ namespace _02_TrabalhandoComStrings
 
             //E quando recebo em string e tenho de criar :( ?
             var dataSplitted = dataString.Split('/');
+
             dataConvertida = new DateTime(year: int.Parse(dataSplitted[2]),
                                          month: int.Parse(dataSplitted[1]),
                                          day: int.Parse(dataSplitted[0]));

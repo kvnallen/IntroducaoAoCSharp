@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _03_OOComCSharp._03_Heranca;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,13 @@ namespace _03_OOComCSharp
     {
         static void Main(string[] args)
         {
+            var animal = new Peixe();
+            animal.Mover();
+
+            var cachorro = new Cachorro();
+            cachorro.Mover();
+
+            Console.Read();
         }
     }
 }

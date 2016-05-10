@@ -2,7 +2,7 @@
 
 namespace _03_OOComCSharp._04_Interfaces
 {
-    public class Gato : IAnimal
+    public class Gato : ClasseAbstrata, IAnimal
     {
         public Gato()
         {
@@ -23,6 +23,12 @@ namespace _03_OOComCSharp._04_Interfaces
         public void Mover()
         {
             Console.WriteLine("Preciso dizer como vou me mover...");
+        }
+
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
